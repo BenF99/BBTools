@@ -18,14 +18,16 @@ body {
 h1 {
     color: white;
     font-size: 100px;
-    margin-bottom: 20px;
+    margin: auto;
+
 }
 
-#content {
-    margin: 0 auto;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    color: white;
+#page {
+  margin: auto;
+  text-align: center;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  color: white;
 }
 
 #sets {

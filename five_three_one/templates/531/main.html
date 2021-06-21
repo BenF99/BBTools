@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -11,7 +12,7 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="{% static '/styles.css' %}" />
     <link
       href="https://fonts.googleapis.com/css2?family=Alata&display=swap"
       rel="stylesheet"
@@ -25,46 +26,50 @@
   <body>
     <div id="particles-js"></div>
     <div id="page">
-      <div id="content">
-        <h1>five.three.one</h1>
-        <div id="main_form">
-          <form action="#" id="orm_form">
-            <label for="orm">One Rep Max:</label><br />
-            <input style="margin-bottom: 5px; margin-top: 5px;"type="text" id="orm" name="orm" required /><br />
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-        <table class="rwd-table">
-          <tr>
-            <th id="first-row"></th>
-            <th>Week 1</th>
-            <th>Week 2</th>
-            <th>Week 3</th>
-            <th>Week 4</th>
-          </tr>
-          <tr>
-            <td data-th="Set 1" id="sets">Set 1</td>
-            <td data-th="Week-1">65% x 5</td>
-            <td data-th="Week-2">70% x 3</td>
-            <td data-th="Week-3">75% x 5</td>
-            <td data-th="Week-4">40% x 5 (Deload)</td>
-          </tr>
-          <tr>
-            <td data-th="Set 2" id="sets">Set 2</td>
-            <td data-th="Week-1">75% x 3</td>
-            <td data-th="Week-2">80% x 3</td>
-            <td data-th="Week-3">85% x 3</td>
-            <td data-th="Week-4">50% x 3 (Deload)</td>
-          </tr>
-          <tr>
-            <td data-th="Set 3" id="sets">Set 3</td>
-            <td data-th="Week-1">85% x 5+</td>
-            <td data-th="Week-2">90% x 3+</td>
-            <td data-th="Week-3">95%% x 1+</td>
-            <td data-th="Week-4">60% x 5 (Deload)</td>
-          </tr>
-        </table>
+      <h1>five.three.one</h1>
+      <div id="main_form">
+        <form action="#" method="get">
+          <label for="main_form">One Rep Max:</label><br />
+          <input
+            style="margin-bottom: 5px; margin-top: 5px"
+            type="text"
+            id="submit_form"
+            name="submit_form"
+            required
+          /><br />
+          <input type="submit" class="btn" value="Submit" name="mybtn">
+        </form>
       </div>
+      <table class="rwd-table">
+        <tr>
+          <th id="first-row"></th>
+          <th>Week 1</th>
+          <th>Week 2</th>
+          <th>Week 3</th>
+          <th>Week 4</th>
+        </tr>
+        <tr>
+          <td data-th="Set 1" id="sets">Set 1</td>
+          <td data-th="Week-1">{{week1.set1}} x 5</td>
+          <td data-th="Week-2">{{week2.set1}} x 3</td>
+          <td data-th="Week-3">{{week3.set1}} x 5</td>
+          <td data-th="Week-4">{{week4.set1}} x 5 (Deload)</td>
+        </tr>
+        <tr>
+          <td data-th="Set 2" id="sets">Set 2</td>
+          <td data-th="Week-1">{{week1.set2}} x 3</td>
+          <td data-th="Week-2">{{week2.set2}} x 3</td>
+          <td data-th="Week-3">{{week3.set2}} x 3</td>
+          <td data-th="Week-4">{{week4.set2}} x 3 (Deload)</td>
+        </tr>
+        <tr>
+          <td data-th="Set 3" id="sets">Set 3</td>
+          <td data-th="Week-1">{{week1.set3}} x 5+</td>
+          <td data-th="Week-2">{{week2.set3}} x 3+</td>
+          <td data-th="Week-3">{{week3.set3}} x 1+</td>
+          <td data-th="Week-4">{{week4.set3}} x 5 (Deload)</td>
+        </tr>
+      </table>
     </div>
     <!--[if lt IE 7]>
       <p class="browsehappy">
@@ -75,7 +80,7 @@
 
     <script src="" async defer></script>
 
-    <script src="particles.js"></script>
-    <script src="app.js"></script>
+    <script src="{% static '/particles.js' %}"></script>
+    <script src="{% static '/app.js' %}"></script>
   </body>
 </html>
